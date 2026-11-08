@@ -1,0 +1,51 @@
+fact,n,stocks,events,Obs
+关闭日market_amount相对配对对照日均值变化-7.34%，配对t p=0.120499。,538,,45,538
+关闭日if_rv相对配对对照日均值变化-9.88%，配对t p=0.157363。,537,,45,537
+关闭日if_volume_all相对配对对照日均值变化-7.86%，配对t p=0.000388056。,538,,45,538
+关闭日volume相对配对对照日均值变化-6.98%，配对t p=0.00222365。,537,,45,537
+if_delay，none，Hold_x_both：Closed×Hold=0.733668，保留115.76%，Webb p=0.0001。,2207616,5409.0,45,2207616
+if_delay，none，Hold_x_both_and_Closed：Closed×Hold=0.609133，保留96.11%，Webb p=0.0001。,2207616,5409.0,45,2207616
+if_delay，full16，Hold_x_both：Closed×Hold=0.292599，保留126.18%，Webb p=0.0001。,2127264,5392.0,44,2127264
+if_delay，full16，Hold_x_both_and_Closed：Closed×Hold=0.214841，保留92.65%，Webb p=0.0119。,2127264,5392.0,44,2127264
+if_r2_now，none，Hold_x_both：Closed×Hold=-0.207877，保留92.16%，Webb p=0.0001。,2207616,5409.0,45,2207616
+if_r2_now，none，Hold_x_both_and_Closed：Closed×Hold=-0.145406，保留64.46%，Webb p=0.0014。,2207616,5409.0,45,2207616
+if_r2_now，full16，Hold_x_both：Closed×Hold=-0.044255，保留66.05%，Webb p=0.0048。,2127264,5392.0,44,2127264
+if_r2_now，full16，Hold_x_both_and_Closed：Closed×Hold=0.0087655，保留-13.08%，Webb p=0.752。,2127264,5392.0,44,2127264
+ih_delay，none，Hold_x_both：Closed×Hold=0.703422，保留111.50%，Webb p=0.0001。,2207616,5409.0,45,2207616
+ih_delay，none，Hold_x_both_and_Closed：Closed×Hold=0.573529，保留90.91%，Webb p=0.0001。,2207616,5409.0,45,2207616
+ih_delay，full16，Hold_x_both：Closed×Hold=0.270563，保留118.82%，Webb p=0.0002。,2127264,5392.0,44,2127264
+ih_delay，full16，Hold_x_both_and_Closed：Closed×Hold=0.180535，保留79.28%，Webb p=0.0303。,2127264,5392.0,44,2127264
+quiet30_both if_delay Closed_minus_Quiet_same_regression：β×100=0.416917，TW p=0.0568087，Webb p=0.0658，事件段=69。,2880889,5410.0,69,2880889
+quiet30_both if_delay quiet_only_original_FE：β×100=0.282312，TW p=0.11331，Webb p=0.1548，事件段=24。,673273,5248.0,24,673273
+quiet30_both if_r2_now Closed_minus_Quiet_same_regression：β×100=-0.159345，TW p=0.0425007，Webb p=0.0151，事件段=69。,2880889,5410.0,69,2880889
+quiet30_both if_r2_now quiet_only_original_FE：β×100=-0.0840092，TW p=0.189744，Webb p=0.208，事件段=24。,673273,5248.0,24,673273
+quiet30_both ih_delay Closed_minus_Quiet_same_regression：β×100=0.332992，TW p=0.154835，Webb p=0.1467，事件段=69。,2880889,5410.0,69,2880889
+quiet30_both ih_delay quiet_only_original_FE：β×100=0.37063，TW p=0.0533488，Webb p=0.0658，事件段=24。,673273,5248.0,24,673273
+quiet30_rv if_delay Closed_minus_Quiet_same_regression：β×100=0.151634，TW p=0.202972，Webb p=0.3281，事件段=269。,7751317,5428.0,269,7751317
+quiet30_rv if_delay quiet_only_original_FE：β×100=0.478174，TW p=2.90867e-15，Webb p=0.0001，事件段=224。,5543701,5425.0,224,5543701
+quiet30_rv if_r2_now Closed_minus_Quiet_same_regression：β×100=0.0492275，TW p=0.188091，Webb p=0.2588，事件段=269。,7751317,5428.0,269,7751317
+quiet30_rv if_r2_now quiet_only_original_FE：β×100=-0.275679，TW p=9.27686e-35，Webb p=0.0001，事件段=224。,5543701,5425.0,224,5543701
+quiet30_rv ih_delay Closed_minus_Quiet_same_regression：β×100=0.011367，TW p=0.923547，Webb p=0.9389，事件段=269。,7751317,5428.0,269,7751317
+quiet30_rv ih_delay quiet_only_original_FE：β×100=0.620301，TW p=1.558e-20，Webb p=0.0001，事件段=224。,5543701,5425.0,224,5543701
+quiet40_both if_delay Closed_minus_Quiet_same_regression：β×100=0.583973，TW p=0.000522407，Webb p=0.0024，事件段=92。,3270422,5410.0,92,3270422
+quiet40_both if_delay quiet_only_original_FE：β×100=0.0937563，TW p=0.478336，Webb p=0.5282，事件段=47。,1062806,5255.0,47,1062806
+quiet40_both if_r2_now Closed_minus_Quiet_same_regression：β×100=-0.182586，TW p=0.00411336，Webb p=0.0258，事件段=92。,3270422,5410.0,92,3270422
+quiet40_both if_r2_now quiet_only_original_FE：β×100=-0.0556831，TW p=0.316919，Webb p=0.4763，事件段=47。,1062806,5255.0,47,1062806
+quiet40_both ih_delay Closed_minus_Quiet_same_regression：β×100=0.40046，TW p=0.0228891，Webb p=0.0549，事件段=92。,3270422,5410.0,92,3270422
+quiet40_both ih_delay quiet_only_original_FE：β×100=0.284466，TW p=0.0511673，Webb p=0.0725，事件段=47。,1062806,5255.0,47,1062806
+quiet40_rv if_delay Closed_minus_Quiet_same_regression：β×100=0.211359，TW p=0.0747007，Webb p=0.1855，事件段=291。,8625844,5428.0,291,8625844
+quiet40_rv if_delay quiet_only_original_FE：β×100=0.415855，TW p=1.23124e-12，Webb p=0.0001，事件段=246。,6418228,5426.0,246,6418228
+quiet40_rv if_r2_now Closed_minus_Quiet_same_regression：β×100=0.0492838，TW p=0.188478，Webb p=0.2566，事件段=291。,8625844,5428.0,291,8625844
+quiet40_rv if_r2_now quiet_only_original_FE：β×100=-0.274837，TW p=1.42562e-35，Webb p=0.0001，事件段=246。,6418228,5426.0,246,6418228
+quiet40_rv ih_delay Closed_minus_Quiet_same_regression：β×100=0.0938766，TW p=0.425673，Webb p=0.552，事件段=291。,8625844,5428.0,291,8625844
+quiet40_rv ih_delay quiet_only_original_FE：β×100=0.534194，TW p=1.41492e-17，Webb p=0.0001，事件段=246。,6418228,5426.0,246,6418228
+全控制HKOnly−Shared if_delay差=0.230286，Webb p=0.2314。,2127264,5392.0,44,2127264
+全控制HKOnly−Shared if_r2_now差=-0.0112369，Webb p=0.8411。,2127264,5392.0,44,2127264
+全控制HKOnly−Shared ih_delay差=0.189692，Webb p=0.3682。,2127264,5392.0,44,2127264
+全控制QFII if_b0：β×100=0.261766，80% MDE×100=0.331496，Webb p=0.0179。,2127039,5392.0,44,2127039
+全控制QFII if_b1：β×100=0.0214837，80% MDE×100=0.223404，Webb p=0.7479。,2127039,5392.0,44,2127039
+全控制QFII if_delay：β×100=-0.0831986，80% MDE×100=0.177321，Webb p=0.3776。,2124502,5392.0,44,2124502
+全控制QFII if_lag_sum：β×100=-0.0583203，80% MDE×100=0.567568，Webb p=0.7646。,2127039,5392.0,44,2127039
+全控制QFII if_r2_now：β×100=0.0546921，80% MDE×100=0.0552103，Webb p=0.0005。,2124502,5392.0,44,2124502
+全控制QFII if_total_beta：β×100=0.248164，80% MDE×100=0.597381，Webb p=0.2221。,2127039,5392.0,44,2127039
+全控制QFII ih_delay：β×100=-0.0664929，80% MDE×100=0.207244，Webb p=0.5351。,2124502,5392.0,44,2124502

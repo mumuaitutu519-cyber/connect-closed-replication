@@ -1,0 +1,2 @@
+metric,variant,specification,beta_x100,se_x100,ci_low_x100,ci_high_x100,event_t,event_t_p,sign_p,positive,negative,wild_event_mean_p,wild_unique_draws,wild_B,n,stocks,events,test_observations,test_df,sign_trials,Obs
+if_delay,w01,full16_adjusted_Table7_equal_event,2.0947031738827913,0.588481655282716,0.9079168102854606,3.2814895374801223,3.5595046252995983,0.0009215783009107293,0.00010604466626773501,35,9,0.0006,9999,9999,2127264,5392,44,44,43,44,2127264

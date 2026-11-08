@@ -1,0 +1,9 @@
+metric,n,max_abs_error,status
+if_delay,28,0.0,PASS
+ih_delay,28,0.0,PASS
+if_lag_sum,28,0.0,PASS
+ih_lag_sum,28,0.0,PASS
+amount,28,0.0,PASS
+valid_minutes,28,0.0,PASS
+one_price,28,0.0,PASS
+raw_eligible_day,28,0.0,PASS

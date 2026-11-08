@@ -1,0 +1,28 @@
+from common import *
+import hashlib,datetime
+
+def main():
+ before=json.loads((R/'meta/input_manifest_before_estimation.json').read_text());after=json.loads((R/'meta/input_manifest.json').read_text());assert before['critical_inputs']==after['critical_inputs'];assert before['minute_archives']==after['minute_archives']
+ f=pd.read_csv(R/'tables/main_estimates.csv');assert len(f)==168,len(f);assert set(f.variant)=={'raw','w01','w005'};assert set(f.metric)=={'if_delay','ih_delay'};assert set(f.dose_timing)=={'event_latest','window_freeze'}
+ ok=f.beta.notna();assert f.loc[ok,'wild_fwl_abs_error'].max()<1e-7;assert np.allclose(f.loc[ok,'beta_x100'],f.loc[ok,'beta']*100,atol=1e-12)
+ required=['n','stocks','events','stock_clusters','date_clusters','wild_clusters','status'];assert all(c in f for c in required);assert f.loc[ok,'wild_B'].eq(9999).all();assert f.loc[f.specification.eq('full_morning'),'status'].eq('NO_EVENTS_IN_REGISTERED_GROUP').all()
+ wc=pd.read_csv(R/'typhoon_calendar.csv');assert len(wc[wc.included])==12;assert (wc.included&wc.closure_type.eq('full')).sum()==6;assert (wc.included&wc.closure_type.str.startswith('partial')).sum()==6;assert wc.placebo.sum()==4
+ latest=pd.read_parquet(T/'exposures_event_latest.parquet');assert (latest.available_date_event_latest.isna()|latest.available_date_event_latest.lt(latest.cutoff_event_latest)).all();assert (latest.holding_date_event_latest.isna()|latest.holding_date_event_latest.lt(latest.cutoff_event_latest.dt.normalize())).all()
+ ex=pd.read_parquet(T/'exposures.parquet');assert not ex.duplicated(['code','event_id']).any();ex.available_date=pd.to_datetime(ex.available_date);ex.freeze_date=pd.to_datetime(ex.freeze_date);assert (ex.available_date.isna()|ex.available_date.lt(ex.freeze_date)).all()
+ old=pd.read_csv(P/'tables/main_estimates.csv');old=old[old.metric.isin(['if_delay','ih_delay'])&old.exposure.eq('dose')];new=f[f.specification.eq('holiday_baseline')&f.dose_timing.eq('window_freeze')];compare=new.merge(old,on=['metric','variant'],suffixes=('_r6','_r1'),validate='1:1');compare['beta_abs_error']=(compare.beta_r6-compare.beta_r1).abs();compare['se_abs_error']=(compare.se_r6-compare.se_r1).abs();compare['obs_difference']=compare.n_r6-compare.n_r1;save(compare,R/'tables/r1_replication_check.csv');assert compare.beta_abs_error.max()<1e-8,compare[['metric','variant','beta_abs_error']];assert compare.se_abs_error.max()<1e-8;assert compare.obs_difference.eq(0).all()
+ numeric=pd.read_csv(R/'logs/original_formula_checks.csv');assert numeric.status.eq('PASS').all();cg=json.loads((R/'logs/independent_cgm_check.json').read_text());assert cg['status']=='PASS'
+ errors=[]
+ for p in (R/'logs').glob('quadratic_*.csv'):
+  try:
+   q=pd.read_csv(p)
+   if len(q):errors.extend(q.error.dropna().tolist())
+  except pd.errors.EmptyDataError:pass
+ if errors:assert max(errors)<1e-7,max(errors)
+ ref_path=R/'meta/estimate_numerical_reference.csv'
+ if ref_path.exists():
+  ref=pd.read_csv(ref_path);keys=['dose_timing','specification','metric','variant','term'];rep=f.merge(ref,on=keys,validate='1:1',suffixes=('_new','_reference'));assert len(rep)==168
+  for col in ['beta','se','p','wild_p','ri_p','n','stocks','events','stock_clusters','date_clusters']:assert np.allclose(rep[col+'_new'],rep[col+'_reference'],rtol=1e-11,atol=1e-12,equal_nan=True),col
+ registration=hashlib.sha256((R/'PREREGISTRATION_R6.md').read_bytes()).hexdigest();first=json.loads((R/'meta/first_estimation.json').read_text());assert first['preregistration_sha256']==registration;assert first['calendar_gate_sha256']==hashlib.sha256((R/'meta/calendar_gate.json').read_bytes()).hexdigest();correction=json.loads((R/'meta/dose_timing_correction.json').read_text());assert correction['corrected_sha256']==registration and correction['no_actual_r6_estimation_started'];assert hashlib.sha256((R/'meta/PREREGISTRATION_R6_ORIGINAL_WINDOW_FREEZE.md').read_bytes()).hexdigest()==correction['original_sha256'];assert datetime.datetime.fromisoformat(first['timestamp']).timestamp()>=correction['timestamp_unix']
+ clock=pd.read_csv(R/'logs/intraday_clock_label_checks.csv');assert len(clock)==6 and clock.status.eq('PASS').all();false=pd.read_csv(R/'tables/false_date_status.csv');assert len(false)==24 and false.false_dates_B.eq(0).all() and false.requested_B.eq(1000).all();sample=pd.read_csv(R/'sample_by_event.csv');assert len(sample)==244 and not sample.duplicated(['event_id','metric','dose_timing']).any();assert all((R/name).exists() for name in ['RESULTS_FOR_CLAUDE.md','sample_by_event.csv','balance.csv','data_scale.csv','run_all.sh'])
+ files={str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in R.rglob('*') if p.is_file() and p.suffix in ['.csv','.md','.py','.sh']};(R/'meta/output_sha256.json').write_text(json.dumps(files,ensure_ascii=False,indent=2));receipt=dict(status='PASS',estimate_rows=len(f),numeric_estimate_rows=int(ok.sum()),full_weather_events=6,partial_weather_events=6,placebo_days=4,r1_max_beta_error=float(compare.beta_abs_error.max()),r1_max_se_error=float(compare.se_abs_error.max()),all_required_deliverables=True,corrected_registration_locked_before_first_estimation=True,reproduction_reference_matched=ref_path.exists(),independent_cgm_passed=True,minute_formula_stock_days_checked=len(numeric),intraday_regressions_checked=int(numeric.segment_regressions_checked.sum()),max_quadratic_error=max(errors) if errors else None,timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat());(R/'meta/final_validation.json').write_text(json.dumps(receipt,indent=2));print(receipt)
+if __name__=='__main__':main()

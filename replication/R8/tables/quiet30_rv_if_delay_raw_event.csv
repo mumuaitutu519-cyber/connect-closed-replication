@@ -1,0 +1,2 @@
+metric,variant,group,contrast,beta_x100,se_x100,ci_low_x100,ci_high_x100,event_t,event_t_p,sign_p,positive,negative,wild_event_mean_p,wild_unique_draws,wild_B,n,stocks,events,test_observations,test_df,sign_trials,Obs
+if_delay,raw,quiet30_rv,daily Q5-Q1 then closed-minus-normal,1.8788173563235204,0.2964502488518046,1.2942122842788368,2.463422428368204,6.337715564754816,1.542019383607743e-09,3.6791915709035494e-09,141,58,0.0001,9999,9999,5543701,5425,199,199,198,199,5543701

@@ -1,0 +1,4 @@
+specification,status,reason
+B_or_H_listing,B_HISTORY_UNAVAILABLE,Issuer links available; verified historical B listing effective dates unavailable; H estimated separately
+HK_closed_NB_open_placebo,NO_EVENTS,HKEX Northbound rules require both markets open
+Foreign_first_holder,SPARSE_EXPLICIT_CLASSIFICATION,Correct actual shareholder_rank=1; only309/411521 source records have explicit foreign/domestic classes;356 frozen universe stock-episodes known

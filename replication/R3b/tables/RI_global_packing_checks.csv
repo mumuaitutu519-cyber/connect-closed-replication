@@ -1,0 +1,3 @@
+group,target,ri_requested,ri_repetitions,ri_unique,ri_attempts,ri_global_feasible,ri_blocking_events,ri_status
+UK,treated,9999,0,0,0,False,202;204,NO_SUPPORT_NO_RELAXATION
+ALL,treated,9999,0,0,0,False,,NO_SUPPORT_NO_RELAXATION

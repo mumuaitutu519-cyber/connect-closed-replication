@@ -1,0 +1,9 @@
+metric,exposure,group,closed,n,stocks,dates,mean,sd
+zero_return_share,dose,zero_exposure,False,886751,4325,457,0.368766438756013,0.16897644785884625
+zero_return_share,dose,zero_exposure,True,180090,4314,92,0.37813843078460774,0.16927782388865437
+zero_return_share,dose,positive_exposure,False,1014049,4154,457,0.32764040084190543,0.17462963181704486
+zero_return_share,dose,positive_exposure,True,189087,4153,92,0.34190786956973945,0.1742195714293585
+zero_return_share,eligible,zero_exposure,False,994832,4609,457,0.3762324568369333,0.16966227760303249
+zero_return_share,eligible,zero_exposure,True,202974,4598,92,0.3855531168195598,0.169972397191782
+zero_return_share,eligible,positive_exposure,False,910763,4082,457,0.3140593107098114,0.17143769404427162
+zero_return_share,eligible,positive_exposure,True,166891,4082,92,0.32750737507315153,0.17092033244928864

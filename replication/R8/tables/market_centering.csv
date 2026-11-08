@@ -1,0 +1,3 @@
+variable,center,scale,n,stocks,events,Obs,reference_control_dates
+if_rv,0.00013357658201452134,0.0002792229077010916,446,,45,446,447
+log_market_amount,27.518197436150487,0.882866163950968,447,,45,447,447

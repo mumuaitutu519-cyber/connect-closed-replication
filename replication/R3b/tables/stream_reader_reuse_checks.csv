@@ -1,0 +1,9 @@
+metric,n,max_abs_error,status
+if_delay,5183,0.0,PASS
+ih_delay,5183,0.0,PASS
+if_lag_sum,5183,0.0,PASS
+ih_lag_sum,5183,0.0,PASS
+amount,5183,0.0,PASS
+valid_minutes,5183,0.0,PASS
+one_price,5183,0.0,PASS
+raw_eligible_day,5183,0.0,PASS

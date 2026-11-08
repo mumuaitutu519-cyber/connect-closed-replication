@@ -1,0 +1,26 @@
+# Licensed inputs, derived panels, and scratch must stay local.
+data/
+raw/
+cache/
+logs/
+meta/
+*.parquet
+*.zip
+*.7z
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.feather
+*.arrow
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+.env
+.env.*
+*.pem
+*.p12
+.DS_Store
+._*
+replication/R3/code/scan

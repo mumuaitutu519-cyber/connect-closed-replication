@@ -1,0 +1,7 @@
+exposure,variable,n_treated,n_control,mean_treated,mean_control,sd_treated,sd_control,standardized_difference,grain
+eligible,北向持股比例(pp),91327,101061,1.5954333329683448,0.03136709512076864,2.3215882738703693,0.44416908019390317,0.935790297926484,unique stock x event; all measures fixed before earliest control day
+eligible,事前60正常日成交额log,91589,99065,18.840324386483708,17.705723066329845,1.1274407985957924,0.9493696595673242,1.0886438812160577,unique stock x event; all measures fixed before earliest control day
+eligible,事前流通市值log,91722,100920,23.18322424764154,21.67243234962677,1.089289507538313,0.7173711784502759,1.638118818250367,unique stock x event; all measures fixed before earliest control day
+dose,北向持股比例(pp),51460,90122,2.5627345511076567,0.0,2.780001395236174,0.0,1.3036878201389093,unique stock x event; all measures fixed before earliest control day
+dose,事前60正常日成交额log,51421,88123,19.157016937859932,17.682059199200175,1.1428655077356071,0.9387299737617937,1.4103759224668462,unique stock x event; all measures fixed before earliest control day
+dose,事前流通市值log,51427,89987,23.552087466189224,21.591275685836905,1.1061072248858894,0.6741226801666936,2.14075014084084,unique stock x event; all measures fixed before earliest control day

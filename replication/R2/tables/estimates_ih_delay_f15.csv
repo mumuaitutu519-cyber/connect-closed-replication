@@ -1,0 +1,7 @@
+metric,variant,specification,exposure,term,status,n
+ih_delay_f15,raw,baseline,dose,closed_x,RANK_DEFICIENT_6_OBS_7_REGRESSORS,0
+ih_delay_f15,raw,baseline,eligible,closed_x,RANK_DEFICIENT_6_OBS_7_REGRESSORS,0
+ih_delay_f15,w01,baseline,dose,closed_x,RANK_DEFICIENT_6_OBS_7_REGRESSORS,0
+ih_delay_f15,w01,baseline,eligible,closed_x,RANK_DEFICIENT_6_OBS_7_REGRESSORS,0
+ih_delay_f15,w005,baseline,dose,closed_x,RANK_DEFICIENT_6_OBS_7_REGRESSORS,0
+ih_delay_f15,w005,baseline,eligible,closed_x,RANK_DEFICIENT_6_OBS_7_REGRESSORS,0

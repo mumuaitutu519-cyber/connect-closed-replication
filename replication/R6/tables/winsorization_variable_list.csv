@@ -1,0 +1,14 @@
+variable,transform,rule,winsorized
+if_delay,"raw,w01,w005","stock historical expanding normal days, min60; pre-freeze pooled fallback",True
+ih_delay,"raw,w01,w005","stock historical expanding normal days, min60; pre-freeze pooled fallback",True
+segment_if_delay,"raw,w01,w005","stock historical expanding normal days, min60; pre-freeze pooled fallback",True
+segment_ih_delay,"raw,w01,w005","stock historical expanding normal days, min60; pre-freeze pooled fallback",True
+dose,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+closed_segment,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+restored_segment,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+actual_closed_A_minutes,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+prior_night_known_dummy,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+T3_and_T8_plan_before_prior_A_close,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+explicit_T8_plan_or_signal_lead_hours,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+segment_amount,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False
+regression_minutes,raw,treatment/exposure/timing/measurement diagnostic; no winsorization,False

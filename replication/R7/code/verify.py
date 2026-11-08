@@ -1,0 +1,34 @@
+from common import *
+
+def main():
+ checks=[]
+ def check(name,ok,detail=''):
+  checks.append(dict(check=name,status='PASS'if bool(ok)else'FAIL',detail=detail,n=np.nan,stocks=np.nan,events=np.nan))
+ pre=pd.read_csv(R/'tables/baseline_reproduction.csv');check('six_baseline_beta_SE_sample_reproduction',pre.status.eq('PASS').all(),str(pre.max_abs_error.max()))
+ source=pd.read_csv(R/'tables/US_static_controls_original_rule_validation.csv');check('US_new_static_controls_match_original_rules',len(source)==6 and source.status.eq('PASS').all())
+ math=pd.read_csv(R/'tables/mathematical_validation.csv');check('FWL_Fieller_math',math.status.eq('PASS').all())
+ f=pd.read_csv(R/'tables/main_estimates.csv');check('main_registered_specifications',len(f)==3*7*21,str(len(f)));check('all_main_variants',set(VARIANTS).issubset(set(f.variant)));check('all_seven_metrics',len(f.metric.unique())==7)
+ ah=f[f.family.eq('US')&f.specification.eq('full_control_no_AH')];check('US_no_AH_uses_R2_event_start',len(ah)==21 and ah.ah_timing.eq('event_start_R2').fillna(False).all())
+ for c in ['n','stocks','events','beta_x100','ci_low_x100','ci_high_x100','wild_p','wild_B','ri_p','ri_B']:check('main_column_'+c,c in f)
+ ok=f.status.eq('OK');check('9999_main_Webb',f.loc[ok,'wild_B'].eq(B).all());check('full_control_never_increases_same_sample_n',f.loc[ok,'n'].gt(0).all());check('point_scaling',np.allclose(f.loc[ok,'beta_x100'],100*f.loc[ok,'beta'],equal_nan=True));check('fwl_identity',f.loc[ok,'fwl_error'].max()<1e-6,str(f.loc[ok,'fwl_error'].max()))
+ if 'ri_fwl_error'in f:check('RI_observed_identity',f.ri_fwl_error.max()<1e-5,str(f.ri_fwl_error.max()))
+ old4=pd.read_csv(P/'R4/tables/main_estimates.csv');ref=old4[old4.specification.eq('HK_all_race8')&old4.metric.isin(['if_delay','ih_delay'])];new=f[f.family.eq('main')&f.specification.eq('full_control_HK17')&f.metric.isin(['if_delay','ih_delay'])&f.term.eq('closed_x')];z=new.merge(ref[['metric','variant','beta','se','n']],on=['metric','variant'],suffixes=('_new','_old'));z['beta_abs_error']=abs(z.beta_new-z.beta_old);z['se_abs_error']=abs(z.se_new-z.se_old);z['n_equal']=z.n_new.eq(z.n_old);z['n']=z.n_new;save(z,'R4_full_HK17_reproduction.csv');check('R4_full_25_controls_reproduction',len(z)==6 and z.n_equal.all()and z.beta_abs_error.max()<1e-6 and z.se_abs_error.max()<1e-6,str(z.beta_abs_error.max()))
+ fi=pd.read_csv(R/'tables/recovery_fieller.csv');check('six_joint_Fieller_specs',len(fi)==6);check('joint_total_equals_b0_plus_lag',np.allclose(fi.total_x100,fi.beta0_x100+fi.lag_x100,atol=1e-8));check('Fieller_status_recorded',fi.fieller_type.notna().all())
+ hr=pd.read_csv(R/'tables/all_horizon_estimates.csv');check('five_horizons_three_variants',all(((hr.metric==f'beta_{h}')&(hr.variant==v)).any()for h in [1,5,15,30,60]for v in VARIANTS));check('R2_horizons',all((hr.metric==f'r2_{h}').any()for h in [1,5,15,30,60]));hc=hr[hr.specification.eq('horizon_common5')];check('common5_identical_counts',all(hc.groupby('variant')[c].nunique().eq(1).all()for c in ['n','stocks','events','dates']))
+ hd=hr[hr.specification.eq('common5_difference_vs_1min')].merge(hc[['metric','variant','beta']],on=['metric','variant'],suffixes=('_difference','_level')).merge(hc[hc.metric.eq('beta_1')][['variant','beta']].rename(columns={'beta':'beta1'}),on='variant');check('common5_difference_identity',len(hd)==12 and np.allclose(hd.beta_difference,hd.beta_level-hd.beta1,atol=1e-8,rtol=0))
+ sm=pd.read_csv(R/'tables/small_sample_all_webb.csv');check('small_sample_complete_36_rows',len(sm)==36);check('six_small_sample_groups',set(['HKOnly','Shared','HolidayPlacebo','WeatherFull','WeatherHalf','SellOnly']).issubset(set(sm.group)));check('small_sample_unique_draws_recorded',sm.wild_unique_draws.notna().all());check('small_Webb_B',sm.wild_B.eq(B).all());check('weather_each_six',sm.loc[sm.group.isin(['WeatherFull','WeatherHalf']),'events'].eq(6).all());expected={'WeatherFull':6,'WeatherHalf':6,'SellOnly':14,'HKOnly':24,'Shared':21,'HolidayPlacebo':14};check('six_registered_group_event_counts',all(sm.loc[sm.group.eq(g),'events'].eq(n).all()for g,n in expected.items()))
+ weather=pd.read_csv(R/'tables/weather_reproduction.csv');check('weather_original_reproduction',weather.n_equal.all()and weather.beta_abs_error.max()<1e-8 and weather.se_abs_error.max()<1e-8)
+ sell=pd.read_csv(R/'tables/sellonly_reproduction.csv');check('sellonly_original_reproduction',sell.n_equal.all()and sell.beta_abs_error.max()<1e-7,str(sell.beta_abs_error.max()))
+ flow=pd.read_csv(R/'tables/us58_moneyflow_event_comparisons.csv');check('US_58_holiday_rows_per_flow_measure',flow.groupby('variable').event_id.nunique().eq(58).all());qc=pd.read_csv(R/'tables/qdc_hkex_recent_scale_validation.csv');check('QDC_HKEX_overlap_scale',len(qc)>0 and qc.absolute_difference.max()<1e-6,str(qc.absolute_difference.max()))
+ frozen=pd.read_csv(R/'tables/frozen_US_controls_manifest.csv');check('US_frozen_features_export',len(frozen)==1 and frozen.iloc[0]['n']==58*5473 and (R/'data/frozen_US_controls.parquet').exists())
+ check('report_exists',(R/'RESULTS_FOR_CLAUDE.md').exists());check('one_click_executable',os.access(R/'run_all.sh',os.X_OK))
+ bad=[]
+ for p in(R/'tables').glob('*.csv'):
+  try:d=pd.read_csv(p,nrows=1)
+  except pd.errors.EmptyDataError:bad.append(p.name);continue
+  if not {'Obs','stocks','events'}.issubset(d.columns):bad.append(p.name)
+ check('every_table_has_counts',not bad,','.join(bad))
+ env=json.loads((R/'meta/preregistration_lock.json').read_text());check('preregistration_hash_unchanged',env['sha256']==hashlib.sha256((R/'PREREGISTRATION_R7.md').read_bytes()).hexdigest())
+ resources=R/'logs/stage_resource_receipts.jsonl';records=[json.loads(l)for l in resources.read_text().splitlines()];peak=max((z['peak_bytes']for z in records),default=0);successful_peak=max((z['peak_bytes']for z in records if z['status']=='PASS'),default=0);check('successful_stage_RSS_under_6GB',successful_peak<=6_000_000_000,str(successful_peak));check('development_memory_deviation_disclosed',peak<=6_000_000_000 or('6.14'in(R/'RESULTS_FOR_CLAUDE.md').read_text()and(R/'meta/memory_deviation.json').exists()),str(peak));save(checks,'delivery_validation.csv');status='PASS'if all(x['status']=='PASS'for x in checks)else'FAIL';js(R/'meta/final_validation.json',dict(status=status,checks=len(checks),failures=[x for x in checks if x['status']!='PASS'],aggregate_peak_bytes=peak,successful_stage_peak_bytes=successful_peak,seed=SEED,workers=4,utc=pd.Timestamp.now(tz='UTC').isoformat()))
+ hashes={str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest()for p in(R/'tables').glob('*.csv')};hashes['RESULTS_FOR_CLAUDE.md']=hashlib.sha256((R/'RESULTS_FOR_CLAUDE.md').read_bytes()).hexdigest();js(R/'meta/output_manifest.json',hashes);print(status,len(checks),flush=True);assert status=='PASS'
+if __name__=='__main__':main()

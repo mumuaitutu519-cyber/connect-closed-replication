@@ -1,0 +1,3 @@
+product,dates,usable_dates,date_min,date_max,missing_selected_contract_days,timestamp_convention,selection,n,stocks,events,Obs
+IF,2368,2367,2016-12-02,2026-09-01,1,source bob is minute BEGIN; shifted +1 minute to stock minute END,contract with highest volume on immediately preceding product trading day; no replacement if absent today,,,,
+IH,2368,2367,2016-12-02,2026-09-01,1,source bob is minute BEGIN; shifted +1 minute to stock minute END,contract with highest volume on immediately preceding product trading day; no replacement if absent today,,,,

@@ -1,0 +1,2 @@
+path,sample,ah_definition,n,stocks,events,bytes,sha256,Obs
+data/frozen_US_controls.parquet,58 event freezes × full 5473 stock universe; before daily outcome selection,ah: frozen-date status; ah_at_event_start_R2: original R2 event-start status used by all US no-AH regressions,317434,5473,58,62415413,e133a38910f201853ac033474fb46c54e68d1ca5c442d1d436bf3925fdedcae6,317434

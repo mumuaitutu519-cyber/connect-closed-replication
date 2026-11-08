@@ -1,0 +1,4 @@
+metric,variant,n,missing,mean,sd,skew,excess_kurtosis,zero_share,q001,q01,q99,q999
+ih_delay_f15,raw,0,2275460,,,,,,,,,
+ih_delay_f15,w01,0,2275460,,,,,,,,,
+ih_delay_f15,w005,0,2275460,,,,,,,,,

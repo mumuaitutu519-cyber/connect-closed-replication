@@ -1,0 +1,16 @@
+metric,label,primary_family,unit,source
+cs_bp,CS价差代理(bp),True,bp,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+ar_bp,AR价差代理(bp),True,bp,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+vr5,5分钟方差比,True,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+autocorr1,分钟收益自相关,True,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+amihud,Amihud(每百万元),True,absolute log return per RMB million,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+if_lag_sum,IF滞后1–5分钟系数和,True,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+if_delay,IF价格延迟,True,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+ih_lag_sum,IH滞后1–5分钟系数和,True,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+ih_delay,IH价格延迟,True,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+open30_bp,开盘30分钟收益(bp),True,bp,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+ln_amount,log成交额,False,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+ln_volume,log成交量,False,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+return_bp,日内开收盘收益(bp),False,bp,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+rv_bp2,日内已实现方差(bp²),False,bp squared,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes
+zero_return_share,零收益分钟占比,False,dimensionless,original day OHLCV; QDC day fallback after 2026-04-10; IF/IH actual contracts for futures outcomes

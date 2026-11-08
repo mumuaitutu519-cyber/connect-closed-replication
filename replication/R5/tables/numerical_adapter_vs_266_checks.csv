@@ -1,0 +1,7 @@
+check,abs_error,n,stocks,events,status,Obs
+beta_closed_x,0.0,3184,80,15,PASS,3184
+se_closed_x,2.7755575615628914e-17,3184,80,15,PASS,3184
+beta_c1,0.0,3184,80,15,PASS,3184
+se_c1,0.0,3184,80,15,PASS,3184
+beta_c2,0.0,3184,80,15,PASS,3184
+se_c2,0.0,3184,80,15,PASS,3184

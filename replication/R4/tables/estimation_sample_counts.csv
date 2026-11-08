@@ -1,0 +1,10 @@
+variant,sample,stock_days,stocks,dates,stock_episodes,events
+raw,IF_estimation,2207616,5409,537,187399,45
+raw,IH_estimation,2207616,5409,537,187399,45
+raw,IF_IH_intersection,2207616,5409,537,187399,45
+w01,IF_estimation,2207616,5409,537,187399,45
+w01,IH_estimation,2207616,5409,537,187399,45
+w01,IF_IH_intersection,2207616,5409,537,187399,45
+w005,IF_estimation,2207616,5409,537,187399,45
+w005,IH_estimation,2207616,5409,537,187399,45
+w005,IF_IH_intersection,2207616,5409,537,187399,45

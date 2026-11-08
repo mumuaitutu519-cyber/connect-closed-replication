@@ -1,0 +1,2 @@
+specification,status,reason
+foreign_custodian_share,SKIPPED_NO_NORTHBOUND_PARTICIPANT_CLASSIFICATION,QDC CCASS is Hong Kong stock aggregate; no northbound A-share participant IDs or custodian category mapping

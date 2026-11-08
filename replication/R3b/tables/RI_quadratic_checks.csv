@@ -1,0 +1,3 @@
+check,stacked,B,ri_p_quadratic,ri_p_direct,observed_beta_error,status
+conditional_calendar_FWL_vs_explicit_refits,False,49,0.04,0.04,7.216449660063518e-16,PASS
+conditional_calendar_FWL_vs_explicit_refits,True,49,0.06,0.06,7.216449660063518e-16,PASS

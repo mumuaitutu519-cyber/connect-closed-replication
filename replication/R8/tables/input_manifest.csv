@@ -1,0 +1,9 @@
+path,bytes,sha256,n,stocks,events,Obs
+/Volumes/Extreme SSD/T9/connect_closed/R4/tables/frozen_features_by_event.csv,448481792,2622334a97e4d83dd3c7de623f810ad3f2e84844906d72a3cdafd934728faa1a,,,,
+/Volumes/Extreme SSD/T9/connect_closed/R2/tables/frozen_features_by_event.csv,67290121,e8c3392d0a29a6a66c4fcfdd2e5bdcf473253dafd93ea4848e14711c70a06c48,,,,
+/Volumes/Extreme SSD/T9/connect_closed/tables/event_date_map.csv,31792,2285965c724cdb32de253054d16487396d46849bae6bf3513acfcf64c97fede5,,,,
+/Volumes/Extreme SSD/T9/connect_closed/tables/events.csv,9459,4b52e68e3a7d2b2a0755d9f90bf78197bcec66a5f8c856d28e695e70d095045e,,,,
+/Volumes/Extreme SSD/T9/connect_closed/code/build_metrics.py,11279,274eb863c16bbe5d208ef5488e70b36ddae44f484a08208f76c318105eb8e9a6,,,,
+/Volumes/Extreme SSD/T9/connect_closed/R5/code/minutes.py,9282,2e20801359893c85b6b52ab104a6ef04d89bbce707c8ca5a3da91fd8864513c8,,,,
+/Volumes/Extreme SSD/T9/connect_closed/R5/code/infer.py,4870,dcabdc1a8d513573e421a0633996d753081a6adbb67cd284a82e7c39393b0838,,,,
+/Volumes/Extreme SSD/T9/connect_closed/R8/PREREGISTRATION_R8.md,6081,76e66a53f3144b1558e9ece8962873acf29fe9d754ce7afa279191ac05d6f64e,,,,

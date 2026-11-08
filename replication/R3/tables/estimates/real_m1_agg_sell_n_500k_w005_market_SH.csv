@@ -1,0 +1,2 @@
+term,beta,se,t,p,ci_low,ci_high,n,cells,stocks,dates,rank,k,df,status,within_r2,mde80,wild_p,wild_clusters,event_wild_p,event_wild_clusters,wild_B,kind,metric,variant,specification,sample_y_mean,dose_p25,dose_p75,events,treated_days,exposure
+closed_dose,-1.07695271153982,0.6556344079877223,-1.6426116421272197,0.10204249998273163,-2.3698352730078334,0.21592984992819297,65381,65381,1416,200,2,2,199,OK,0.0021908851289305213,1.8446784006914874,0.0005,42,0.0076,25,9999,real,m1_agg_sell_n_500k,w005,market_SH,51.86348082776342,0.0,5.15,25,42,NB

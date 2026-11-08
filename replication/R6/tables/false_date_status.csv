@@ -1,0 +1,25 @@
+specification,metric,variant,dose_timing,false_dates_B,false_dates_unique,false_dates_status,false_dates_mean,false_dates_q025,false_dates_q975,false_dates_tail_p,false_dates_statistic,n,stocks,events,stock_clusters,date_clusters,wild_clusters,requested_B
+full_day,if_delay,raw,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,257027,5224,6,5224,60,6,1000
+full_day,if_delay,w01,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,257027,5224,6,5224,60,6,1000
+full_day,if_delay,w005,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,257027,5224,6,5224,60,6,1000
+full_day,if_delay,raw,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,256939,5224,6,5224,60,6,1000
+full_day,if_delay,w01,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,256939,5224,6,5224,60,6,1000
+full_day,if_delay,w005,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,256939,5224,6,5224,60,6,1000
+half_day,if_delay,raw,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,if_delay,w01,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,if_delay,w005,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,if_delay,raw,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,if_delay,w01,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,if_delay,w005,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+full_day,ih_delay,raw,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,257027,5224,6,5224,60,6,1000
+full_day,ih_delay,w01,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,257027,5224,6,5224,60,6,1000
+full_day,ih_delay,w005,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,257027,5224,6,5224,60,6,1000
+full_day,ih_delay,raw,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,256939,5224,6,5224,60,6,1000
+full_day,ih_delay,w01,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,256939,5224,6,5224,60,6,1000
+full_day,ih_delay,w005,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,coefficient,256939,5224,6,5224,60,6,1000
+half_day,ih_delay,raw,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,ih_delay,w01,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,ih_delay,w005,event_latest,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,ih_delay,raw,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,ih_delay,w01,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000
+half_day,ih_delay,w005,window_freeze,0.0,0.0,NO_NONOVERLAPPING_BLOCK_SUPPORT,,,,,restricted score,1186151,5067,6,5067,36,6,1000

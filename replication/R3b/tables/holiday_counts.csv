@@ -1,0 +1,7 @@
+group,independent_dates,event_segments,target30_met
+US,58,58,True
+UK,22,22,False
+EU,18,18,False
+ALL,90,89,True
+US_half,9,9,False
+US_Columbus,8,8,False

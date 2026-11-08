@@ -1,0 +1,2 @@
+specification,status,n,stocks,events,reason,Obs
+northbound_turnover_dose_race,UNAVAILABLE_INDIVIDUAL_PRE_EVENT_TURNOVER,0,0,0,Local cn_hsgt contains aggregate money flow and holdings only; absent stocks in top10-active lists cannot be set to zero; no complete usable individual turnover history recovered.,0

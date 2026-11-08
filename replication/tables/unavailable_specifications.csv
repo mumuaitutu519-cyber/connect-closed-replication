@@ -1,0 +1,3 @@
+specification,status,reason
+Hang Seng minute response,UNAVAILABLE,Located A-share index minutes and global daily indices; no verified historical Hang Seng minute source located; Hong Kong holiday returns never zero-filled
+True effective bid-ask spread and order-book depth,UNAVAILABLE_REPLACED_AS_REGISTERED,"cn_tick has code/date/seq/minute/price/volume/bs only, no bid/ask/depth; CS/AR and Amihud are proxies, not measured quoted/effective spreads"

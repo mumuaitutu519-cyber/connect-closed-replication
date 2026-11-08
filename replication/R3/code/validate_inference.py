@@ -1,0 +1,10 @@
+from common import *
+from infer import fit
+from scipy import linalg
+rng=np.random.default_rng(SEED);days=pd.date_range('2024-01-01',periods=9);stocks=[f'S{i}'for i in range(10)];F={d:rng.normal(size=(8,6))for d in days};rows=[];explicit=[];GG=[];HH=[]
+for i,c in enumerate(stocks):
+ for j,d in enumerate(days):
+  if rng.random()<.2:continue
+  g=np.array([rng.normal(),float(j>4)*i/10]);h=np.array([1,i/10]);x=np.column_stack([np.tile(g,(8,1)),(h[None,:,None]*F[d][:,None,:]).reshape(8,-1)]);b=np.arange(14)/10;y=x@b+i/10-j/20+rng.normal(size=8);rows.append(dict(code=c,date=d,event_id=j//3,treatment_date=days[j//3*3],n=8,sy=y.sum(),sy2=y@y,**{f'syf{k}':y@F[d][:,k]for k in range(6)}));GG.append(g);HH.append(h)
+  for k in range(8):explicit.append((i,j,x[k],y[k]))
+f=pd.DataFrame(rows);L=np.zeros(14);L[1]=1;res=fit(f,np.array(GG),np.array(HH),{'target':L},{d:(8,F[d].sum(0),F[d].T@F[d])for d in days})[0];x=np.array([a[2]for a in explicit]);y=np.array([a[3]for a in explicit]);e=np.array([a[0]for a in explicit]);t=np.array([a[1]for a in explicit]);fe=np.column_stack([(e[:,None]==np.arange(10)).astype(float),(t[:,None]==np.arange(9)).astype(float)]);proj=fe@np.linalg.pinv(fe);xx=x-proj@x;yy=y-proj@y;b=np.linalg.lstsq(xx,yy,rcond=None)[0];err=abs(res['beta']-b[1]);assert err<1e-8,(res['beta'],b[1]);u=yy-xx@b;bread=np.linalg.pinv(xx.T@xx);score=xx*u[:,None];cs=np.array([score[e==i].sum(0)for i in np.unique(e)]);cd=np.array([score[t==i].sum(0)for i in np.unique(t)]);cc=np.array([score[(e==i)&(t==j)].sum(0)for i,j in sorted(set(zip(e,t)))]);N=len(y);S=len(cs);D=len(cd);C=len(cc);rank=np.linalg.matrix_rank(xx);V=bread@(cs.T@cs*S/(S-1)+cd.T@cd*D/(D-1)-cc.T@cc*C/(C-1))@bread*(N-1)/(N-S-D-rank+1);se=np.sqrt(V[1,1]);assert abs(res['se']-se)<1e-8,(res['se'],se);js(R/'meta/inference_validation.json',dict(beta_abs_error=err,se_abs_error=abs(res['se']-se),observations=N,cells=C,check='independent explicit minute dummy OLS and CGM stock-date intersection covariance',wild_B=9999));print('PASS',err,abs(res['se']-se))

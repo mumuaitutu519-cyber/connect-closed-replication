@@ -1,0 +1,9 @@
+check,n,stocks,events,max_abs_error,status,Obs
+exact_prefix_linear_quantiles,0,0,0,0.0,PASS,0
+exact_prefix_linear_quantiles,1,0,0,0.0,PASS,1
+exact_prefix_linear_quantiles,2,0,0,0.0,PASS,2
+exact_prefix_linear_quantiles,3,0,0,0.0,PASS,3
+exact_prefix_linear_quantiles,23,0,0,0.0,PASS,23
+exact_prefix_linear_quantiles,999,0,0,0.0,PASS,999
+exact_prefix_linear_quantiles,5000,0,0,0.0,PASS,5000
+exact_prefix_linear_quantiles,10003,0,0,0.0,PASS,10003

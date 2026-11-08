@@ -1,0 +1,4 @@
+date,url,retrieved_utc,status,sha256,qualifies,reason
+2019-07-31,https://www.hkex.com.hk/News/Market-Communications/2019/190731news?sc_lang=en,2026-11-07T10:56:03.448062+00:00,200,c8f622e74a1bc417d97c1e95aac05cf65aa95c5f22f588c1edca46b7464623b8,False,HK_also_halted_part_day; not full-day HK-open NB-only suspension
+2023-09-08,https://www.hkex.com.hk/News/Market-Communications/2023/2309083news?sc_lang=en,2026-11-07T10:56:05.188505+00:00,200,6a2a1fcba197abfcf2704feccd0b0e3fec391651ad00845630c986897e881d75,False,HK_also_closed_full_day; excluded from HK-open identification
+2024-09-06,https://www.hkex.com.hk/news/market-communications/2024/2409062news?sc_lang=zh-hk,2026-11-07T10:56:07.669693+00:00,200,a4796526169abadb985cb12fbc196060c6e929435a1a8b300d8650e1183656e4,False,HK_also_closed_full_day; excluded from HK-open identification

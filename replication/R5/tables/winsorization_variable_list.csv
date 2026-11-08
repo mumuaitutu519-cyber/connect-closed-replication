@@ -1,0 +1,42 @@
+variable,variant,winsorized,rule,n,stocks,events,Obs
+if_r2_now,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2212912,5414,45,2212912
+if_r2_now,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2212912,5414,45,2212912
+if_r2_now,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2212912,5414,45,2212912
+if_r2_full,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2212912,5414,45,2212912
+if_r2_full,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2212912,5414,45,2212912
+if_r2_full,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2212912,5414,45,2212912
+if_b0_now,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b0_now,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b0_now,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b0,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b0,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b0,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b1,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b1,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b1,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b2,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b2,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b2,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b3,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b3,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b3,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b4,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b4,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b4,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b5,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b5,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+if_b5,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2215613,5414,45,2215613
+ln_amount,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2275460,5435,46,2275460
+ln_amount,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2275460,5435,46,2275460
+ln_amount,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2275460,5435,46,2275460
+rv_bp2,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2275460,5435,46,2275460
+rv_bp2,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2275460,5435,46,2275460
+rv_bp2,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2275460,5435,46,2275460
+adjust5,raw,False,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2139485,5394,45,2139485
+adjust5,w01,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2139485,5394,45,2139485
+adjust5,w005,True,past eligible NB-open stock expanding >=60; else pooled strictly pre-freeze; own-variable quantiles,2139485,5394,45,2139485
+valid_minutes,none,False,count/group/frozen dose; not winsorized,0,0,0,0
+Hold,none,False,count/group/frozen dose; not winsorized,0,0,0,0
+QFII,none,False,count/group/frozen dose; not winsorized,0,0,0,0
+quintile,none,False,count/group/frozen dose; not winsorized,0,0,0,0
+amount_decile,none,False,count/group/frozen dose; not winsorized,0,0,0,0

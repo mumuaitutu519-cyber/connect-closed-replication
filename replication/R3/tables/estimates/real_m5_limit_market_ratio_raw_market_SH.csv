@@ -1,0 +1,2 @@
+kind,metric,variant,specification,term,status,reason,error_type,exposure
+real,m5_limit_market_ratio,raw,market_SH,closed_dose,NOT_ESTIMABLE,NO_COMPLETE_CASES_OR_NO_PRE_SAMPLE_WINSOR_HISTORY,ValueError,NB

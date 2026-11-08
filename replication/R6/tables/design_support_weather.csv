@@ -1,0 +1,7 @@
+family,event_id,start,length,candidate_blocks,candidate_starts,n,stocks,events,stock_clusters,date_clusters,count_scope,calendar_rows
+weather,101,2017-08-23,1,2,2017-08-16;2017-08-30,0,0,6,0,60,"calendar design only, no stock observations",60
+weather,104,2020-10-13,1,1,2020-10-20,0,0,6,0,60,"calendar design only, no stock observations",60
+weather,108,2023-07-17,1,2,2023-07-10;2023-07-24,0,0,6,0,60,"calendar design only, no stock observations",60
+weather,109,2023-09-01,1,1,2023-09-15,0,0,6,0,60,"calendar design only, no stock observations",60
+weather,110,2023-09-08,1,1,2023-09-15,0,0,6,0,60,"calendar design only, no stock observations",60
+weather,112,2024-09-06,1,1,2024-09-13,0,0,6,0,60,"calendar design only, no stock observations",60

@@ -1,0 +1,7 @@
+event_id,variable,max_abs_error,missing_mask_equal,n,stocks,events,status,Obs
+1,analyst,0.0,True,5473,5473,1,PASS,5473
+23,analyst,0.0,True,5473,5473,1,PASS,5473
+45,analyst,0.0,True,5473,5473,1,PASS,5473
+1,qfii,0.0,True,5473,5473,1,PASS,5473
+23,qfii,0.0,True,5473,5473,1,PASS,5473
+45,qfii,0.0,True,5473,5473,1,PASS,5473

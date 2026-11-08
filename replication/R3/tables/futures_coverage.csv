@@ -1,0 +1,3 @@
+product,dates,usable_dates,date_min,date_max,last_valid_date,new_tick_days,prefix_through_20260901_unchanged
+IF,2388,2387,2016-12-02,2026-09-30,2026-09-30,20,True
+IH,2388,2387,2016-12-02,2026-09-30,2026-09-30,20,True

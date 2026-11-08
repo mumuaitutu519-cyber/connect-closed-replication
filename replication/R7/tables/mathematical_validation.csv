@@ -1,0 +1,4 @@
+check,n,stocks,events,max_abs_error,status,Obs
+unbalanced_FWL_vs_explicit_dummy_OLS,342,21,7,2.7200464103316335e-15,PASS,342
+Fieller_bounded_contains_point,0,0,0,0.0,PASS,0
+Fieller_weak_denominator_keeps_unbounded_set,0,0,0,0.0,PASS,0

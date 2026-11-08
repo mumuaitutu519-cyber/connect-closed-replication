@@ -1,0 +1,14 @@
+measure,value,unit
+已确认北向关闭且A股开市日,92,days
+独立连续关闭事件段,46,episodes
+主窗口日期,549,dates
+主窗口股票,5435,stocks
+主窗口有效股票×日期,2275460,stock_days
+主窗口正剂量股票,4154,stocks
+主窗口剂量缺失股票×日期,5483,stock_days
+本轮处理分钟原始行数,2512842412,minute_rows
+本轮股票×日期指标行数,10426732,stock_days_before_eligibility
+可用持股记录日期,1921,disclosure_dates
+本地cn_tick库存行数(2016起，仅库存核查),24347377361,tick_rows_not_estimation_rows
+原始分钟重复键,0,rows
+原始盘口报价字段,0,quote_fields
